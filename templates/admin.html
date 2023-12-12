@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> MovieApp - {{_('Admin')}} </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='admin.css') }}">
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+            var del_link = document.querySelector(".del_link");
+            var del_user_div = document.querySelector(".del_user");
+
+            del_link.addEventListener("click", function() {
+                del_user_div.style.display = "block";
+            });
+
+            var user_profile_link = document.querySelector(".user_profile_link");
+            var user_profile_div = document.querySelector(".user_profile_div");
+
+            user_profile_link.addEventListener("click", function() {
+                user_profile_div.style.display = "block";
+            });
+
+            var add_movie_link = document.querySelector(".add_movie_link");
+            var add_movie_div = document.querySelector(".add_movie_div");
+
+            add_movie_link.addEventListener("click", function() {
+                add_movie_div.style.display = "block";
+            });
+
+            var del_movie_link = document.querySelector(".del_movie_link");
+            var del_movie_div = document.querySelector(".del_movie_div");
+
+            del_movie_link.addEventListener("click", function() {
+                del_movie_div.style.display = "block";
+            });
+        });
+
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <p></p>
+
+        <div class="logout">
+            <a href="/logout">{{_('Log out')}}</a>
+        </div>
+
+        <h1> {{_('Welcome Admin !!!')}}</h1>
+
+            {% if flash_message %}
+                <div>
+                    <p class="flash-message">{{flash_message}}</p>
+                </div>
+            {% endif %}
+
+        <h2> {{_('List of operations are:')}} </h2>
+
+        <div class="link">
+                <p> <a href="/users"> {{_('Display all users')}} </a> </p>
+                <p> <a href="/add_user"> {{_('Add new user')}} </a> </p>
+                <p class="del_link"> <a href="#"> {{_('Del a user')}} </a> </p>
+                    <div class="del_user">
+                        <p> {{_('Enter the ID of user to delete')}} </p>
+                        <form class="user_id_form" method="POST" action="/admin">
+                            <label for="del_user_id"> {{_('ID:')}} </label><br>
+                            <input type="text" id="del_user_id" name="del_user_id" placeholder="*" required><br>
+                            <input type="submit" value="{{_('Del User')}}">
+                        </form>
+                    </div>
+                <p class="user_profile_link"> <a href="#"> {{_('User Profile')}} </a> </p>
+                    <div class="user_profile_div">
+                        <p> {{_('Enter the ID of user')}} </p>
+                        <form class="user_id_form" method="POST" action="/admin">
+                            <label for="user_profile_id"> {{_('ID:')}} </label><br>
+                            <input type="text" id="user_profile_id" name="user_profile_id" placeholder="*" required><br>
+                            <input type="submit" value="{{_('Visit user profile')}}">
+                        </form>
+                     </div>
+                <p class="add_movie_link"> <a href="#"> {{_('Add movie')}} </a> </p>
+                    <div class="add_movie_div">
+                        <p> {{_('Enter the movie name')}} </p>
+                        <form class="user_id_form" method="GET" action="/admin/add_movie">
+                            <label for="movie_name"> {{_('Movie name:')}} </label><br>
+                            <input type="text" id="movie_name" name="movie_name" placeholder="*" required><br>
+                            <input type="submit" value="{{_('Search movie')}}">
+                        </form>
+                     </div>
+                <p class="del_movie_link"> <a href="#"> {{_('Del movie')}} </a> </p>
+                    <div class="del_movie_div">
+                        <p> {{_('Enter the movie ID')}} </p>
+                        <form class="user_id_form" method="GET" action="/admin/del_movie">
+                            <label for="movie_id"> {{_('ID:')}} </label><br>
+                            <input type="text" id="movie_id" name="movie_id" placeholder="*" required><br>
+                            <input type="submit" value="{{_('Delete movie')}}">
+                        </form>
+                     </div>
+                <p> <a href="/"> {{_('Login page')}} </a> </p>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,77 @@
+/* admin.css */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    color: #333;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.flash-message {
+    background-color: #ffc107;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.del_user {
+    display: none;
+}
+
+.user_profile_div {
+    display: none;
+}
+
+.add_movie_div {
+    display: none;
+}
+
+.del_movie_div {
+    display: none;
+}
+
+.user_id_form {
+    width: 200px;
+    margin-left: 300px;
+    margin-top: 45px;
+    text-align: centre;
+}
+
+/* Style for form labels */
+.user_id_form label {
+    display: inline;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* Style for form inputs */
+.user_id_form[type="text"],
+.user_id_form[type="password"] {
+    display: block;
+    margin-bottom: 5px;
+    padding: 5px;
+    width: 100%;
+    border: 1px solid #ccc;
+}
+
+/* Style for the del_user button */
+.user_id_form[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    padding: 5px 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.user_id_form[type="submit"]:hover {
+    background-color: #0056b3;
+

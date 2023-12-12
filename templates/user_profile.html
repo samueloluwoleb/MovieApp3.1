@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> MovieApp - {{name.title()}} {{_('Profile')}}  </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='user_profile.css') }}">
+    <script>
+
+    document.addEventListener("DOMContentLoaded", function() {
+
+        var mode = {{mode}}
+        var userid = {{user_id}}
+
+
+        var div_button = document.querySelector(".slider");
+        var container = document.querySelector(".container");
+        var recommendation_div = document.querySelector(".recommendation_button");
+        var recommendation_content = document.querySelector(".recommendation_content");
+
+        dark = mode.toString();
+        user_id = userid.toString();
+
+        if (dark == "true") {
+            container.style.backgroundColor = 'black';
+            container.style.color = 'white';
+        }
+        else {
+            container.style.backgroundColor = 'white';
+            container.style.color = 'black';
+        }
+
+        div_button.addEventListener("click", function() {
+
+            // Update the container styles
+            if (dark == "false") {
+                container.style.backgroundColor = 'black';
+                container.style.color = 'white';
+                dark = "true"
+            } else {
+                container.style.backgroundColor = 'white';
+                container.style.color = 'black';
+                dark = "false"
+            }
+
+            // Update the session variable on the server
+            updateDarkModeOnServer(dark);
+        });
+
+        recommendation_div.addEventListener("click", function() {
+            recommendation_content.innerHTML = ''
+            recommendation_content.style.backgroundColor = '#61a075';
+
+            chatgpt_api();
+        });
+
+        // Function to update dark mode on the server
+        function updateDarkModeOnServer(value) {
+            // Using Fetch API to send a POST request to the server
+            fetch('/toggle_darkmode', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({dark_mode:value}),
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Dark mode updated on the server');
+            })
+            .catch(error => {
+                console.error('Error updating dark mode:', error);
+            });
+        }
+
+        function chatgpt_api() {
+            // Using Fetch API to send a GET request to the server
+            const url = `http://127.0.0.1:5004/chatgpt_api/${user_id}`
+            fetch(url)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! Status: ${response.status}`);
+                    }
+
+                    // Parse the JSON response
+                    return response.json();
+                })
+                .then(data => {
+                    // Handle the data from the response
+                     data.forEach(item => {
+                         recommendation_content.innerHTML += item + '<br><br>';
+                     recommendation_content.style.border = '1px solid blue';
+                     });
+
+                })
+                .catch(error => {
+                    // Handle errors
+                    console.error('Fetch error:', error);
+                });
+            }
+
+    });
+</script>
+
+</head>
+
+<body>
+    <div class="toggle">
+        <h2>{{_('Toggle dark mode')}}</h2>
+        <label class="switch">
+            <input type="checkbox" checked>
+            <span class="slider round"></span>
+        </label>
+    </div>
+    <div class="container">
+        <div class="logout">
+            <a href="/logout"> {{_('Log out')}}</a>
+        </div>
+        <div>
+            <h1 class="text_"> {{_('List of')}} {{ name.title() }}{{_("'s movies")}} </h1>
+        </div>
+        <div>
+            {% if flash_message %}
+                <div class="flash-message">
+                    <p>{{ flash_message }}</p>
+                </div>
+            {% endif %}
+        </div>
+        <div class="data_movie">
+            <ul>
+                {% if not user_movies %}
+                    <li> <h3> {{_('This user has no favourite movie')}} </h3></li>
+                {% else %}
+                    {% for movie in user_movies %}
+                        <li class="text_">
+                            <h3> {{_('Name')}} - {{movie.get('name')}} </h3>
+                            <ul>
+                                <li class="text_">
+                                    {{_('id')}} - {{movie.get('id')}}
+                                </li>
+                                <li class="text_">
+                                    {{_('Director')}} - {{movie.get('director')}}
+                                </li>
+                                <li class="text_">
+                                    {{_('Year')}} - {{movie.get('year')}}
+                                </li>
+                                <li class="text_">
+                                    {{_('Rating')}} - {{movie.get('rating')}}
+                                </li>
+                                {% for genre_detail in genres_details %}
+                                    {% if genre_detail.get("id") == movie.get('genre_id') %}
+                                        <li class="text_">
+                                            {{_('Genre')}} - {{genre_detail.get('title')}}
+                                        </li>
+                                    {% endif %}
+                                {% endfor %}
+                                <p class="text_">
+                                    {{_('Review and Rating:')}}
+                                </p>
+                                {% for user in reviews_data %}
+                                    {% if user_id == user %}
+                                        {% for movie_details in reviews_data[user] %}
+                                            {% if movie_details.get('movie_id') == movie.get('id') %}
+                                                <li>
+                                                    {{ movie_details.get('description') }}&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;{{ movie_details.get('rating')}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                    <a href="/users/{{ user_id }}/delete_review/{{ movie.get('id') }}"> {{_('Delete review')}} </a>
+                                                </li>
+                                            {% endif %}
+                                        {% endfor %}
+                                    {% endif %}
+                                {% endfor %}
+                            </ul>
+                        </li>
+                        <div class="up_del">
+                            <p> <a href="/users/{{ user_id }}/update_movie/{{ movie.get('id') }}"> <input type="button" value="{{_('Update movie')}}"> </a> </p>
+                            <p> <a href="/users/{{ user_id }}/delete_movie/{{ movie.get('id') }}"> <input type="button" value="{{_('Delete movie')}}"> </a> </p>
+                            {% if user_id not in reviews_data %}
+                                <p> <input class="add-review-button" id="add_review{{movie.get('id')}}" type="button" value="{{_('Add a review')}}"> </p>
+                            {% else %}
+                                {% for user in reviews_data %}
+                                    {% if user_id == user %}
+                                        {% set movie_list = [] %}
+                                        {% for movie_details in reviews_data[user] %}
+                                            {% set _ = movie_list.append(movie_details.get('movie_id')) %}
+                                        {% endfor %}
+                                        {% if movie.get('id') in movie_list %}
+                                        {% else %}
+                                            <p> <input class="add-review-button" id="add_review{{movie.get('id')}}" type="button" value="{{_('Add a review')}}"> </p>
+                                        {% endif %}
+                                    {% endif %}
+                                {% endfor %}
+                            {% endif %}
+
+                            <div id="review_box{{movie.get('id')}}" class="review_box">
+                                <form action="/reviews/{{user_id}}/review_movie/{{movie.get('id')}}" method="POST">
+                                    <label for="rating">{{_('Review Rating:')}}</label><br>
+                                    <select name="rating" id="rating" required>
+                                        <option value="" disabled selected>{{_('Choose movie rating')}}</option>
+                                        <option value="1">{{_('1')}}</option>
+                                        <option value="2">{{_('2')}}</option>
+                                        <option value="3">{{_('3')}}</option>
+                                        <option value="4">{{_('4')}}</option>
+                                        <option value="5">{{_('5')}}</option>
+                                        <option value="6">{{_('6')}}</option>
+                                        <option value="7">{{_('7')}}</option>
+                                        <option value="8">{{_('8')}}</option>
+                                        <option value="9">{{_('9')}}</option>
+                                        <option value="10">{{_('10')}}</option>
+                                    </select><br>
+                                        <label for="descriptn">{{_('Review description:')}}</label><br>
+                                        <textarea id="descriptn" name="description" rows="10" cols="30" required></textarea><br>
+                                        <input type="submit" value="{{_('Add review')}}">
+                                </form>
+                            </div>
+                            <script>
+                                const toggleButton{{movie.get('id')}} = document.getElementById('add_review{{movie.get('id')}}');
+                                const hiddenDiv{{movie.get('id')}} = document.getElementById('review_box{{movie.get('id')}}');
+
+                                let isVisible{{movie.get('id')}}= false;
+
+                                toggleButton{{movie.get('id')}}.addEventListener('click', () => {
+                                    if (!isVisible{{movie.get('id')}}) {
+                                        hiddenDiv{{movie.get('id')}}.style.display = 'block';
+                                        isVisible{{movie.get('id')}} = true;
+                                    } else {
+                                        hiddenDiv{{movie.get('id')}}.style.display = 'none';
+                                        isVisible{{movie.get('id')}} = false;
+                                    }
+                                });
+                            </script>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            </ul>
+        </div>
+        <div class="recommended_movies">
+            <p> {{_('Click the button below and wait few seconds to get movies 5 recommendation you will enjoy')}}</p>
+           <button class="recommendation_button">{{_('Show Movie Recommendations')}}</button>
+            <p></p>
+            <div class="recommendation_content">
+            </div>
+
+       </div>
+        <div class="link">
+            <p> <a class="text_" href="/users/{{ user_id }}/add_movie"> {{_('Add a new movie to your catalogue')}} </a> </p>
+            <p> <a class="text_" href="/">{{_('Login page')}} </a> </p>
+        </div>
+    </div>
+
+</body>
+</html>
+

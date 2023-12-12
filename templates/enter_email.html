@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> MovieApp - {{_('Password_reset_email')}}</title>
+    <link rel="stylesheet" href="static/enter_email.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            {{_('Password Reset')}}
+        </div>
+        <div class="login-div">
+            <p> {{_('Enter your email to reset password')}} </p>
+            <form class="login-form" method="POST" action="/password_reset_email">
+                <label for="email"> {{_('Email:')}}</label><br>
+                <input type="text" id="email" name="email" placeholder="*" required><br>
+                <input type="submit" value="{{_('Reset')}}">
+            </form>
+        </div>
+    </div>
+</body>
+</html>

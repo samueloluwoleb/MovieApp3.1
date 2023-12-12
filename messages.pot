@@ -1,0 +1,666 @@
+# Translations template for PROJECT.
+# Copyright (C) 2023 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2023-11-29 11:49-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.13.1\n"
+
+#: app.py:99 app.py:114
+msgid "Logged in successful"
+msgstr ""
+
+#: app.py:103
+msgid "Login Failed: Please verify you entered the correct email and password"
+msgstr ""
+
+#: app.py:139 app.py:230 app.py:298 app.py:339 app.py:408 app.py:510
+msgid "You are not authorize to view the page, please log in"
+msgstr ""
+
+#: app.py:155 app.py:193
+msgid "The password doesn't match, try again"
+msgstr ""
+
+#: app.py:162
+msgid "The user"
+msgstr ""
+
+#: app.py:162
+msgid "has been added successfully."
+msgstr ""
+
+#: app.py:200
+msgid "Welcome"
+msgstr ""
+
+#: app.py:200
+msgid "Hover on Menu to login."
+msgstr ""
+
+#: app.py:214
+msgid "You have successfully logged out, hover on menu to log back in"
+msgstr ""
+
+#: app.py:262 app.py:550
+msgid "There are no movies matching your searched movie"
+msgstr ""
+
+#: app.py:416
+msgid "The ID you entered doesn't exist"
+msgstr ""
+
+#: app.py:492
+msgid "Review successfully added to the movie"
+msgstr ""
+
+#: app.py:525
+msgid "Please check the user ID"
+msgstr ""
+
+#: app.py:562
+msgid "The movie"
+msgstr ""
+
+#: app.py:562
+msgid "already exists in your catalogue"
+msgstr ""
+
+#: app.py:569
+msgid "successfully added"
+msgstr ""
+
+#: app.py:658
+msgid "Password reset email sent. Check your email for instructions."
+msgstr ""
+
+#: app.py:662
+msgid "Email not found. Please check your email address."
+msgstr ""
+
+#: app.py:673
+msgid "Invalid or expired token. Please request a new password reset."
+msgstr ""
+
+#: app.py:682
+msgid "The password doesn't match, request a new password reset link"
+msgstr ""
+
+#: app.py:686
+msgid "Password updated, please re-login with the new password"
+msgstr ""
+
+#: templates/400.html:5
+msgid "400 Error"
+msgstr ""
+
+#: templates/400.html:9 templates/404.html:9 templates/500.html:9
+msgid "Oops !!! Something Went wrong."
+msgstr ""
+
+#: templates/400.html:10 templates/404.html:10 templates/500.html:10
+msgid "Go back to homepage"
+msgstr ""
+
+#: templates/400.html:13 templates/404.html:13 templates/500.html:13
+#: templates/index.html:6
+msgid "Homepage"
+msgstr ""
+
+#: templates/404.html:5
+msgid "404 Error"
+msgstr ""
+
+#: templates/500.html:5
+msgid "500 Error"
+msgstr ""
+
+#: templates/add_movie.html:5 templates/add_user_movie.html:5
+msgid "Add a movie"
+msgstr ""
+
+#: templates/add_movie.html:12 templates/add_user.html:10
+#: templates/add_user_movie.html:29 templates/admin.html:49
+#: templates/update_user_movie.html:30 templates/user_profile.html:116
+#: templates/users.html:11
+msgid "Log out"
+msgstr ""
+
+#: templates/add_movie.html:15 templates/add_user_movie.html:43
+msgid "These are your movie details"
+msgstr ""
+
+#: templates/add_movie.html:17 templates/add_user_movie.html:45
+msgid "Movie Title:"
+msgstr ""
+
+#: templates/add_movie.html:19 templates/add_user_movie.html:47
+#: templates/update_user_movie.html:37
+msgid "Year of Release:"
+msgstr ""
+
+#: templates/add_movie.html:21 templates/add_user_movie.html:49
+msgid "Movie Rating:"
+msgstr ""
+
+#: templates/add_movie.html:23 templates/add_user_movie.html:51
+#: templates/update_user_movie.html:39
+msgid "Movie Director:"
+msgstr ""
+
+#: templates/add_movie.html:25 templates/add_user_movie.html:76
+#: templates/admin.html:83
+msgid "Add movie"
+msgstr ""
+
+#: templates/add_movie.html:29 templates/add_user.html:37
+#: templates/users.html:33
+msgid "Admin profile"
+msgstr ""
+
+#: templates/add_user.html:5 templates/add_user.html:33
+msgid "Add user"
+msgstr ""
+
+#: templates/add_user.html:19 templates/sign_up.html:16
+msgid "Enter user details"
+msgstr ""
+
+#: templates/add_user.html:23 templates/sign_up.html:20
+msgid "Name:"
+msgstr ""
+
+#: templates/add_user.html:25 templates/enter_email.html:17
+#: templates/index.html:68 templates/sign_up.html:22
+msgid "Email:"
+msgstr ""
+
+#: templates/add_user.html:27 templates/index.html:70 templates/sign_up.html:24
+msgid "Password:"
+msgstr ""
+
+#: templates/add_user.html:29 templates/sign_up.html:26
+msgid "Confirm Password:"
+msgstr ""
+
+#: templates/add_user.html:31 templates/sign_up.html:28
+msgid "Gender:"
+msgstr ""
+
+#: templates/add_user_movie.html:34
+msgid "Enter a movie name to search"
+msgstr ""
+
+#: templates/add_user_movie.html:36
+msgid "Search movie:"
+msgstr ""
+
+#: templates/add_user_movie.html:37 templates/admin.html:85
+msgid "Enter the movie name"
+msgstr ""
+
+#: templates/add_user_movie.html:38
+msgid "Search"
+msgstr ""
+
+#: templates/add_user_movie.html:53
+msgid "Genre:"
+msgstr ""
+
+#: templates/add_user_movie.html:55
+msgid "Choose movie genre"
+msgstr ""
+
+#: templates/add_user_movie.html:56 templates/update_user_movie.html:44
+msgid "Action"
+msgstr ""
+
+#: templates/add_user_movie.html:57 templates/update_user_movie.html:45
+msgid "Adventure"
+msgstr ""
+
+#: templates/add_user_movie.html:58 templates/update_user_movie.html:46
+msgid "Superhero"
+msgstr ""
+
+#: templates/add_user_movie.html:59 templates/update_user_movie.html:47
+msgid "Comedy"
+msgstr ""
+
+#: templates/add_user_movie.html:60 templates/update_user_movie.html:48
+msgid "Drama"
+msgstr ""
+
+#: templates/add_user_movie.html:61 templates/update_user_movie.html:49
+msgid "Science Fiction"
+msgstr ""
+
+#: templates/add_user_movie.html:62 templates/update_user_movie.html:50
+msgid "Fantasy"
+msgstr ""
+
+#: templates/add_user_movie.html:63 templates/update_user_movie.html:51
+msgid "Horror"
+msgstr ""
+
+#: templates/add_user_movie.html:64 templates/update_user_movie.html:52
+msgid "Thriller"
+msgstr ""
+
+#: templates/add_user_movie.html:65 templates/update_user_movie.html:53
+msgid "Mystery"
+msgstr ""
+
+#: templates/add_user_movie.html:66 templates/update_user_movie.html:54
+msgid "Romance"
+msgstr ""
+
+#: templates/add_user_movie.html:67 templates/update_user_movie.html:55
+msgid "Historical"
+msgstr ""
+
+#: templates/add_user_movie.html:68 templates/update_user_movie.html:56
+msgid "Western"
+msgstr ""
+
+#: templates/add_user_movie.html:69 templates/update_user_movie.html:57
+msgid "Animation"
+msgstr ""
+
+#: templates/add_user_movie.html:70 templates/update_user_movie.html:58
+msgid "Musical"
+msgstr ""
+
+#: templates/add_user_movie.html:71 templates/update_user_movie.html:59
+msgid "Documentary"
+msgstr ""
+
+#: templates/add_user_movie.html:72 templates/update_user_movie.html:60
+msgid "War"
+msgstr ""
+
+#: templates/add_user_movie.html:73 templates/update_user_movie.html:61
+msgid "Sports"
+msgstr ""
+
+#: templates/add_user_movie.html:74 templates/update_user_movie.html:62
+msgid "Family"
+msgstr ""
+
+#: templates/add_user_movie.html:82 templates/update_user_movie.html:87
+#: templates/user_profile.html:244
+msgid "Add a new movie to your catalogue"
+msgstr ""
+
+#: templates/add_user_movie.html:83 templates/update_user_movie.html:88
+msgid "Back to profile"
+msgstr ""
+
+#: templates/admin.html:6
+msgid "Admin"
+msgstr ""
+
+#: templates/admin.html:52
+msgid "Welcome Admin !!!"
+msgstr ""
+
+#: templates/admin.html:60
+msgid "List of operations are:"
+msgstr ""
+
+#: templates/admin.html:63
+msgid "Display all users"
+msgstr ""
+
+#: templates/admin.html:64
+msgid "Add new user"
+msgstr ""
+
+#: templates/admin.html:65
+msgid "Del a user"
+msgstr ""
+
+#: templates/admin.html:67
+msgid "Enter the ID of user to delete"
+msgstr ""
+
+#: templates/admin.html:69 templates/admin.html:78 templates/admin.html:96
+msgid "ID:"
+msgstr ""
+
+#: templates/admin.html:71
+msgid "Del User"
+msgstr ""
+
+#: templates/admin.html:74
+msgid "User Profile"
+msgstr ""
+
+#: templates/admin.html:76
+msgid "Enter the ID of user"
+msgstr ""
+
+#: templates/admin.html:80
+msgid "Visit user profile"
+msgstr ""
+
+#: templates/admin.html:87
+msgid "Movie name:"
+msgstr ""
+
+#: templates/admin.html:89
+msgid "Search movie"
+msgstr ""
+
+#: templates/admin.html:92
+msgid "Del movie"
+msgstr ""
+
+#: templates/admin.html:94
+msgid "Enter the movie ID"
+msgstr ""
+
+#: templates/admin.html:98 templates/user_profile.html:175
+msgid "Delete movie"
+msgstr ""
+
+#: templates/admin.html:101 templates/sign_up.html:34
+#: templates/user_profile.html:245
+msgid "Login page"
+msgstr ""
+
+#: templates/enter_email.html:6
+msgid "Password_reset_email"
+msgstr ""
+
+#: templates/enter_email.html:12 templates/new_password.html:13
+msgid "Password Reset"
+msgstr ""
+
+#: templates/enter_email.html:15
+msgid "Enter your email to reset password"
+msgstr ""
+
+#: templates/enter_email.html:19
+msgid "Reset"
+msgstr ""
+
+#: templates/index.html:32
+msgid "Translate Website:"
+msgstr ""
+
+#: templates/index.html:34
+msgid "Choose a preferred language"
+msgstr ""
+
+#: templates/index.html:35
+msgid "Spanish"
+msgstr ""
+
+#: templates/index.html:36
+msgid "French"
+msgstr ""
+
+#: templates/index.html:37
+msgid "English"
+msgstr ""
+
+#: templates/index.html:39
+msgid "Load language"
+msgstr ""
+
+#: templates/index.html:44
+msgid "Welcome to the MovieApp"
+msgstr ""
+
+#: templates/index.html:47
+msgid "MENU"
+msgstr ""
+
+#: templates/index.html:51 templates/sign_up.html:5 templates/sign_up.html:30
+msgid "Sign up"
+msgstr ""
+
+#: templates/index.html:55 templates/index.html:72
+msgid "Log in"
+msgstr ""
+
+#: templates/index.html:66
+msgid "Login details"
+msgstr ""
+
+#: templates/index.html:75
+msgid "forget password"
+msgstr ""
+
+#: templates/new_password.html:6
+msgid "New password"
+msgstr ""
+
+#: templates/new_password.html:17
+msgid "Enter a new password:"
+msgstr ""
+
+#: templates/new_password.html:19
+msgid "New password:"
+msgstr ""
+
+#: templates/new_password.html:21
+msgid "Confirm New password:"
+msgstr ""
+
+#: templates/new_password.html:23
+msgid "Submit"
+msgstr ""
+
+#: templates/update_user_movie.html:5
+msgid "Title"
+msgstr ""
+
+#: templates/update_user_movie.html:33
+msgid "Enter details of the movie"
+msgstr ""
+
+#: templates/update_user_movie.html:35
+msgid "Movie Name:"
+msgstr ""
+
+#: templates/update_user_movie.html:41
+msgid "Movie genre:"
+msgstr ""
+
+#: templates/update_user_movie.html:43
+msgid "* Choose another genre"
+msgstr ""
+
+#: templates/update_user_movie.html:64 templates/user_profile.html:195
+msgid "Review Rating:"
+msgstr ""
+
+#: templates/update_user_movie.html:66
+msgid "* Choose another rating"
+msgstr ""
+
+#: templates/update_user_movie.html:67
+msgid "1.0"
+msgstr ""
+
+#: templates/update_user_movie.html:68
+msgid "2.0"
+msgstr ""
+
+#: templates/update_user_movie.html:69
+msgid "3.0"
+msgstr ""
+
+#: templates/update_user_movie.html:70
+msgid "4.0"
+msgstr ""
+
+#: templates/update_user_movie.html:71
+msgid "5.0"
+msgstr ""
+
+#: templates/update_user_movie.html:72
+msgid "6.0"
+msgstr ""
+
+#: templates/update_user_movie.html:73
+msgid "7.0"
+msgstr ""
+
+#: templates/update_user_movie.html:74
+msgid "8.0"
+msgstr ""
+
+#: templates/update_user_movie.html:75
+msgid "9.0"
+msgstr ""
+
+#: templates/update_user_movie.html:76
+msgid "10.0"
+msgstr ""
+
+#: templates/update_user_movie.html:80 templates/user_profile.html:209
+msgid "Review description:"
+msgstr ""
+
+#: templates/update_user_movie.html:83 templates/user_profile.html:174
+msgid "Update movie"
+msgstr ""
+
+#: templates/user_profile.html:5
+msgid "Profile"
+msgstr ""
+
+#: templates/user_profile.html:108
+msgid "Toggle dark mode"
+msgstr ""
+
+#: templates/user_profile.html:119
+msgid "List of"
+msgstr ""
+
+#: templates/user_profile.html:119
+msgid "'s movies"
+msgstr ""
+
+#: templates/user_profile.html:131
+msgid "This user has no favourite movie"
+msgstr ""
+
+#: templates/user_profile.html:135
+msgid "Name"
+msgstr ""
+
+#: templates/user_profile.html:138
+msgid "id"
+msgstr ""
+
+#: templates/user_profile.html:141
+msgid "Director"
+msgstr ""
+
+#: templates/user_profile.html:144
+msgid "Year"
+msgstr ""
+
+#: templates/user_profile.html:147
+msgid "Rating"
+msgstr ""
+
+#: templates/user_profile.html:152
+msgid "Genre"
+msgstr ""
+
+#: templates/user_profile.html:157
+msgid "Review and Rating:"
+msgstr ""
+
+#: templates/user_profile.html:165
+msgid "Delete review"
+msgstr ""
+
+#: templates/user_profile.html:177 templates/user_profile.html:187
+msgid "Add a review"
+msgstr ""
+
+#: templates/user_profile.html:197
+msgid "Choose movie rating"
+msgstr ""
+
+#: templates/user_profile.html:198
+msgid "1"
+msgstr ""
+
+#: templates/user_profile.html:199
+msgid "2"
+msgstr ""
+
+#: templates/user_profile.html:200
+msgid "3"
+msgstr ""
+
+#: templates/user_profile.html:201
+msgid "4"
+msgstr ""
+
+#: templates/user_profile.html:202
+msgid "5"
+msgstr ""
+
+#: templates/user_profile.html:203
+msgid "6"
+msgstr ""
+
+#: templates/user_profile.html:204
+msgid "7"
+msgstr ""
+
+#: templates/user_profile.html:205
+msgid "8"
+msgstr ""
+
+#: templates/user_profile.html:206
+msgid "9"
+msgstr ""
+
+#: templates/user_profile.html:207
+msgid "10"
+msgstr ""
+
+#: templates/user_profile.html:211
+msgid "Add review"
+msgstr ""
+
+#: templates/user_profile.html:236
+msgid "Click the button below and wait few seconds to get movies 5 "
+msgstr ""
+
+#: templates/user_profile.html:237
+msgid "Show Movie Recommendations"
+msgstr ""
+
+#: templates/users_profile.html:238
+msgid "recommendation you will enjoy"
+msgstr ""
+
+#: templates/users.html:5 templates/users.html:15
+msgid "Users"
+msgstr ""
+
+#: templates/users.html:27
+msgid "ID"
+msgstr ""
+

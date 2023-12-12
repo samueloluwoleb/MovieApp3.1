@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> MovieApp - {{_('Homepage')}}</title>
+    <link rel="stylesheet" href="static/styles.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var div2 = document.querySelector(".div2");
+            var login_text = document.querySelector(".login-item");
+            var display_div = document.querySelector(".login-div");
+
+            div2.addEventListener("mouseenter", function() {
+                this.classList.add("active");
+            });
+            div2.addEventListener("mouseleave", function() {
+                this.classList.remove("active");
+            });
+
+            login_text.addEventListener("click", function() {
+                display_div.style.display = "block";
+            });
+        });
+
+    </script>
+</head>
+<body>
+
+    <p></p>
+    <form action="/translate" method="POST">
+        <label for="language">{{_('Translate Website:')}}</label><br>
+        <select name="language" id="language" required>
+            <option value="" disabled selected>{{_('Choose a preferred language')}}</option>
+            <option value="es">{{_('Spanish')}}</option>
+            <option value="fr">{{_('French')}}</option>
+            <option value="en">{{_('English')}}</option>
+        </select>
+        <input type="submit" value="{{_('Load language')}}">
+    </form>
+
+    <div class="container">
+        <div class="header">
+            {{_('Welcome to the MovieApp')}}
+        </div>
+        <div class="div2">
+            <button class="menu-button">{{_('MENU')}}</button>
+        </div>
+        <div class="menu">
+            <div class="menu-item">
+                <a href="/sign_up">{{_('Sign up')}}</a>
+            </div>
+            <div class="menu-item line"></div>
+            <div class="menu-item login-item">
+                <a href="#"> {{_('Log in')}} </a>
+            </div>
+        </div>
+        <div>
+            {% if flash_message %}
+                <div class="flash-message">
+                    <p class="flash-message">{{flash_message}}</p>
+                </div>
+            {% endif %}
+        </div>
+        <div class="login-div">
+            <p> {{_('Login details')}} </p>
+            <form class="login-form" method="POST" action="/">
+                <label for="email"> {{_('Email:')}}</label><br>
+                <input type="text" id="email" name="email" placeholder="*" required><br>
+                <label for="password"> {{_('Password:')}}</label><br>
+                <input type="password" id="password" name="password" placeholder="*" required><br>
+                <input type="submit" value="{{_('Log in')}}">
+            </form>
+            <p></p>
+            <a href="/enter_email"> {{_('forget password')}} </a>
+        </div>
+    </div>
+</body>
+</html>

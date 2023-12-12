@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> MovieApp - {{_('Sign up')}} </title>
+    <link rel="stylesheet" href="static/sign_up.css">
+</head>
+<body>
+    <div class="container">
+        {% if flash_message %}
+                <div>
+                    <p class="flash-message">{{flash_message}}</p>
+                </div>
+        {% endif %}
+        <div>
+            <h1> {{_('Enter user details')}} </h1>
+        </div>
+        <div>
+            <form class="form" method="POST" action="/sign_up">
+                <label for="username"> {{_('Name:')}}</label><br>
+                <input type="text" id="username" name="username" placeholder="*" required><br>
+                <label for="email"> {{_('Email:')}}</label><br>
+                <input type="text" id="email" name="email" placeholder="*" required><br>
+                <label for="password"> {{_('Password:')}}</label><br>
+                <input type="password" id="password" name="password" placeholder="*" required><br>
+                <label for="password"> {{_('Confirm Password:')}}</label><br>
+                <input type="password" id="password1" name="password1" placeholder="*" required><br>
+                <label for="email"> {{_('Gender:')}}</label><br>
+                <input type="text" id="gender" name="gender" placeholder="M/F/(LGBTQ)"><br>
+                <input type="submit" value="{{_('Sign up')}}">
+            </form>
+        </div>
+        <div class="link">
+            <p> <a href="/"> {{_('Login page')}} </a> </p>
+        </div>
+    </div>
+</body>
+</html>

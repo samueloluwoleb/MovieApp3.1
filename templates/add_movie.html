@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> MovieApp - {{_('Add a movie')}} </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='add_user_movie.css') }}">
+</head>
+<body>
+
+    <div class="container">
+        <div class="logout">
+            <a href="/logout"> {{_('Log out')}}</a>
+        </div>
+        <div>
+            <h2> {{_('These are your movie details')}} </h2>
+            <form class="form" method="POST" action="/admin/add_movie">
+                <label for="movie_title"> {{_('Movie Title:')}}</label><br>
+                <input type="text" id="movie_title" name="title" value=" {{title}}" readonly><br>
+                <label for="movie_year"> {{_('Year of Release:')}}</label><br>
+                <input type="text" id="movie_year" name="year" value="{{year}}" readonly><br>
+                <label for="movie_rating"> {{_('Movie Rating:')}}</label><br>
+                <input type="text" id="movie_rating" name="rating" value="{{rating}}" readonly><br>
+                <label for="movie_director"> {{_('Movie Director:')}}</label><br>
+                <input type="text" id="movie_director" name="director" value="{{director}}" readonly><br>
+                <input type="submit" value="{{_('Add movie')}}">
+            </form>
+        </div>
+        <div class="link">
+            <p> <a href="/admin"> {{_('Admin profile')}} </a> </p>
+        </div>
+    </div>
+</body>
+</html>

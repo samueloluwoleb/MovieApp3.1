@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> MovieApp - {{_('Add a movie')}} </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='add_user_movie.css') }}">
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+
+        mode = {{mode}}
+        var container = document.querySelector(".container");
+
+        dark = mode.toString()
+
+        // Update the container styles
+        if (dark == "true") {
+            container.style.backgroundColor = 'black';
+            container.style.color = 'white';
+        } else {
+            container.style.backgroundColor = 'white';
+            container.style.color = 'black';
+        }
+
+    });
+</script>
+</head>
+<body class="mybody">
+    <div class="logout">
+        <a href="/logout">{{_('Log out')}}</a>
+    </div>
+    <div class="container">
+        {% if state == 'get' %}
+            <div>
+                <p> {{_('Enter a movie name to search')}}</p>
+                <form class="form" method="GET" action="/users/{{user_id}}/add_movie">
+                    <label for="searched_movie">{{_('Search movie:')}}</label><br>
+                    <input type="text" id="searched_movie" name="searched_movie" placeholder="{{_('Enter the movie name')}}" required><br>
+                    <input type="submit" value="{{_('Search')}}">
+                </form>
+            </div>
+        {% else %}
+            <div>
+                <h2> {{_('These are your movie details')}} </h2>
+                <form class="form" method="POST" action="/users/{{user_id}}/add_movie">
+                    <label for="movie_title"> {{_('Movie Title:')}}</label><br>
+                    <input type="text" id="movie_title" name="title" value=" {{title}}" readonly><br>
+                    <label for="movie_year"> {{_('Year of Release:')}}</label><br>
+                    <input type="text" id="movie_year" name="year" value="{{year}}" readonly><br>
+                    <label for="movie_rating"> {{_('Movie Rating:')}}</label><br>
+                    <input type="text" id="movie_rating" name="rating" value="{{rating}}" readonly><br>
+                    <label for="movie_director"> {{_('Movie Director:')}}</label><br>
+                    <input type="text" id="movie_director" name="director" value="{{director}}" readonly><br>
+                    <label for="genre"> {{_('Genre:')}}</label><br>
+                    <select name="genre_id" id="genre" required>
+                        <option value="" disabled selected>* {{_('Choose movie genre')}}</option>
+                        <option value="1">{{_('Action')}}</option>
+                        <option value="2">{{_('Adventure')}}</option>
+                        <option value="3">{{_('Superhero')}}</option>
+                        <option value="4">{{_('Comedy')}}</option>
+                        <option value="5">{{_('Drama')}}</option>
+                        <option value="6">{{_('Science Fiction')}}</option>
+                        <option value="7">{{_('Fantasy')}}</option>
+                        <option value="8">{{_('Horror')}}</option>
+                        <option value="9">{{_('Thriller')}}</option>
+                        <option value="10">{{_('Mystery')}}</option>
+                        <option value="11">{{_('Romance')}}</option>
+                        <option value="12">{{_('Historical')}}</option>
+                        <option value="13">{{_('Western')}}</option>
+                        <option value="14">{{_('Animation')}}</option>
+                        <option value="15">{{_('Musical')}}</option>
+                        <option value="16">{{_('Documentary')}}</option>
+                        <option value="17">{{_('War')}}</option>
+                        <option value="18">{{_('Sports')}}</option>
+                        <option value="19">{{_('Family')}}</option>
+                    </select><br>
+                    <input type="submit" value="{{_('Add movie')}}">
+                </form>
+            </div>
+        {% endif %}
+
+        <div class="link">
+            <p> <a href="/users/{{ user_id }}/add_movie"> {{_('Add a new movie to your catalogue')}} </a> </p>
+            <p> <a href="/users/{{ user_id }}"> {{_('Back to profile')}} </a> </p>
+        </div>
+    </div>
+</body>
+</html>
