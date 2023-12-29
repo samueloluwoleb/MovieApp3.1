@@ -49,5 +49,36 @@ The core functionalities of your MoviWeb application will include:
 You should install the projects dependencies package using the command:
 pip install -r requirements. txt
 
+## Config file 
+
+Follow the steps below to create a config.py file and add data for successful site load.
+
+* At the project root level, create a folder called "config"
+* Inside the config folder, create a python file called "config.py"
+* Add the details below in the config.py file
+
+import os
+CURRENT_DIRECTORY = os.path.dirname(os.path.abspath(__file__))
+RELATIVE_PATH_TO_DATABASE = '../storage/movies.sqlite'
+DATABASE_PATH = os.path.join(CURRENT_DIRECTORY, RELATIVE_PATH_TO_DATABASE)
+SQLALCHEMY_DATABASE_URI = f'sqlite:///{DATABASE_PATH}'
+SECRET_KEY = 'Create any series of string(numbers and letters) as your key'
+BABEL_DEFAULT_LOCALE = 'en'
+LANGUAGES = {
+            'en': 'English',
+            'es': 'Spanish',
+            'fr': 'French'
+                        }
+ADMIN_EMAIL = "movieappbot@gmail.com"
+
+# Configure Flask-Mail settings
+MAIL_SERVER = 'smtp.gmail.com'
+MAIL_PORT = 465
+MAIL_USE_TLS = False
+MAIL_USE_SSL = True
+MAIL_USERNAME = "this should be admin email to send your users email"
+MAIL_PASSWORD = 'this should be the password of yoor email or key generated based on your type of email account used, gmail uses this now'
+MAIL_DEFAULT_SENDER = "this should be admin email to send your users email" 
+
 
 
