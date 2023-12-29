@@ -5,7 +5,7 @@ import re
 
 
 # create environment for open ai
-OPEN_AI_KEY = "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"
+OPEN_AI_KEY = "create an openAI account and obtain an api key, then paste the key here"
 client = OpenAI(
     api_key=OPEN_AI_KEY
 )
