@@ -8,8 +8,7 @@
 * [Core Functionalities](#core-functionalities)
 
 ## General info
-MoviWeb App project is a full-featured, dynamic web application that allows user to query for any movie,
-the movie info is obtained through API from OMDB website and the movie gets added to their personal list of favourite movies
+MoviWeb App project is a full-featured, dynamic web application that allows users to create their personal account, query for any movie title, the movie info is obtained through API call to OMDB website and the movie gets added to their personal list of favourite movies. User can add movies to their movie catalogue, update movie info, and delete a movie as well.
 
 ## Technologies
 Project is created with:
@@ -19,20 +18,23 @@ Project is created with:
 * Flask
 * API
 * SQLITE database
+* OpenAI API 
 	
 ## Application Structure
 The MoviWeb application will consist of several key parts:
 * User Interface (UI): An intuitive web interface built using Flask, HTML, and CSS. It will provide forms for adding, updating, and deleting movies, as well as a method to select a user.
 * Data Management: A Python class to handle operations related to the sqlite database
-* data source. This class should expose functions for listing all users, listing a user’s movies, and updating a user’s movie.
+* Data source. A python class should expose functions for operations such as: listing all users, listing a user’s movies, deleting a user movie, and updating a user’s movie.
 * Persistent Storage: An sqlite database file to store user and movie data. This file will act as the database for your application.
-
+* API calls: Api calls to different data source(OMDB website to get movie details and OpenAI website to get movie reccomendation)
+  
 ## Core Functionalities
 
 The core functionalities of your MoviWeb application will include:
-* User Selection: The ability for a user to select their identity from a list of users.
-* Movie Management: After a user is selected, the application will display a list of their favorite movies. From here, users should be able to Add a movie: Include the movie’s name, director, year of release, and rating.
-* Delete a movie: Remove a movie from their list.
-* Update a movie: Modify the information of a movie from their list.
-* List all movies: View all the movies on their list.
-* Data Source Management: Use your Python class to manage interactions with the sqlite database data source.
+* User Account Creation: The functionality  a uthat enables a user to create an account on the website using their email address and then log in into their account.
+* Language Preference: The functionality that enables a user to choose the language they want the website to be displayed in. Languages are (English, Spanish and French)
+* UI Display Preference: The functionality that enables the user to choose between Dark and Light mode
+* Movie Reccomendation: The functionality that display a list of movies user would enjoy based on the movie from their catalogue
+* Add a movie: User can add movie to their catalogue
+* Delete a movie: User can delete movies from their list.
+* Update a movie: User can update movie details.
