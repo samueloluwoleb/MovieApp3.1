@@ -80,7 +80,7 @@ Follow the steps below to create a config.py file and add data for successful si
 * MAIL_USE_TLS = False
 * MAIL_USE_SSL = True
 * MAIL_USERNAME = "this should be admin email or any email you wish to reply to users email request"
-* MAIL_PASSWORD = 'this should be the password of your email or generated key string based on the configuration type of the email account used, especially if using gmail account'
+* MAIL_PASSWORD = 'this should be the password of your email or generated key string based on the configuration type of the email account used, especially if using gmail account' (Shoot a message to samueloluwoleonline@gmail.com if there are issues with eamil configurations)
 * MAIL_DEFAULT_SENDER = "this should be admin email or any email you wish to reply to users email request" 
 
 
