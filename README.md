@@ -57,7 +57,8 @@ Follow the steps below to create a config.py file and add data for successful si
 
 * At the project root level, create a folder called "config"
 * Inside the config folder, create a python file called "config.py"
-* Add the details below in the config.py file
+  
+Add the details below in the config.py file
 
 * import os
 * CURRENT_DIRECTORY = os.path.dirname(os.path.abspath(__file__))
