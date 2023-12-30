@@ -5,6 +5,8 @@
 * [Technologies](#technologies)
 * [Application Structure](#application-structure)
 * [Core Functionalities](#core-functionalities)
+* [Project dependencies installation](#Project dependencies installation)
+* [Config.py file setup](#Config.py file setup)
 
 ## General info
 MoviWeb App project is a full-featured, dynamic web application that allows users to create their personal account, query for any movie title, the movie info is obtained through API call to OMDB website and the movie gets added to their personal list of favourite movies. User can add movies to their movie catalogue, update movie info, and delete a movie as well.
@@ -49,7 +51,7 @@ The core functionalities of your MoviWeb application will include:
 You should install the projects dependencies package using the command:
 pip install -r requirements. txt
 
-## Config file 
+## Config.py file setup
 
 Follow the steps below to create a config.py file and add data for successful site load.
 
@@ -69,6 +71,7 @@ Follow the steps below to create a config.py file and add data for successful si
             'es': 'Spanish',
             'fr': 'French'
                         }
+  
 * ADMIN_EMAIL = "create an admin email and paste that here"
 
 * "#Configure Flask-Mail settings"
