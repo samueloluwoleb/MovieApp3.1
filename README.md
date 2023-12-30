@@ -5,6 +5,8 @@
 * [Technologies](#technologies)
 * [Application Structure](#application-structure)
 * [Core Functionalities](#core-functionalities)
+* [Application Structure](#application-structure)
+* [Core Functionalities](#core-functionalities)
 * [Project dependencies installation](#project-dependencies-installation)
 * [Config.py file setup](#Config.py-file-setup)
 
