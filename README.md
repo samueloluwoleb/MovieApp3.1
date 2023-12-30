@@ -62,23 +62,23 @@ Follow the steps below to create a config.py file and add data for successful si
 * RELATIVE_PATH_TO_DATABASE = '../storage/movies.sqlite'
 * DATABASE_PATH = os.path.join(CURRENT_DIRECTORY, RELATIVE_PATH_TO_DATABASE)
 * SQLALCHEMY_DATABASE_URI = f'sqlite:///{DATABASE_PATH}'
-* SECRET_KEY = 'Create any series of string(numbers and letters) as your key'
+* SECRET_KEY = 'Create any series of string(numbers and letters) as your key and paste it here'
 * BABEL_DEFAULT_LOCALE = 'en'
 * LANGUAGES = {
             'en': 'English',
             'es': 'Spanish',
             'fr': 'French'
                         }
-ADMIN_EMAIL = "movieappbot@gmail.com"
+* ADMIN_EMAIL = "create an admin email and paste that here"
 
 * "#Configure Flask-Mail settings"
 * MAIL_SERVER = 'smtp.gmail.com'
 * MAIL_PORT = 465
 * MAIL_USE_TLS = False
 * MAIL_USE_SSL = True
-* MAIL_USERNAME = "this should be admin email to send your users email"
-* MAIL_PASSWORD = 'this should be the password of yoor email or key generated based on your type of email account used, gmail uses this now'
-* MAIL_DEFAULT_SENDER = "this should be admin email to send your users email" 
+* MAIL_USERNAME = "this should be admin email or any email you wish to reply to users email request"
+* MAIL_PASSWORD = 'this should be the password of your email or generated key string based on the configuration type of the email account used, especially if using gmail account'
+* MAIL_DEFAULT_SENDER = "this should be admin email or any email you wish to reply to users email request" 
 
 
 
