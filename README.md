@@ -71,7 +71,7 @@ Follow the steps below to create a config.py file and add data for successful si
                         }
 ADMIN_EMAIL = "movieappbot@gmail.com"
 
-*# Configure Flask-Mail settings
+* "#Configure Flask-Mail settings"
 * MAIL_SERVER = 'smtp.gmail.com'
 * MAIL_PORT = 465
 * MAIL_USE_TLS = False
