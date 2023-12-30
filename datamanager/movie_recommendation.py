@@ -11,7 +11,7 @@ client = OpenAI(
 )
 
 # create the environment for Replicate
-REPLICATE_TOKEN_KEY = "r8_IIZlatb6ZLMgaDsy6hx2gFIuBldfLMD4Xdhmo"
+REPLICATE_TOKEN_KEY = "create a replicate account and obtain an api key, then paste the key here"
 os.environ["REPLICATE_API_TOKEN"] = REPLICATE_TOKEN_KEY
 
 
