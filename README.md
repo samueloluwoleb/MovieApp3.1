@@ -56,6 +56,7 @@ pip install -r requirements. txt
 Follow the steps below to create a config.py file and add data for successful site load.
 
 At the project root level, create a folder called "config"
+
 Inside the config folder, create a python file called "config.py"
   
 Add the details below in the config.py file
