@@ -5,8 +5,8 @@
 * [Technologies](#technologies)
 * [Application Structure](#application-structure)
 * [Core Functionalities](#core-functionalities)
-* [Project dependencies installation](#Project dependencies installation)
-* [Config.py file setup](#Config.py file setup)
+* [Project dependencies installation](#project-dependencies-installation)
+* [Config.py file setup](#Config.py-file-setup)
 
 ## General info
 MoviWeb App project is a full-featured, dynamic web application that allows users to create their personal account, query for any movie title, the movie info is obtained through API call to OMDB website and the movie gets added to their personal list of favourite movies. User can add movies to their movie catalogue, update movie info, and delete a movie as well.
