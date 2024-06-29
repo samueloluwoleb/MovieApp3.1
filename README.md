@@ -92,4 +92,4 @@ Open the datamanager folder and load the movie_recommendation.py file
 
 Edit the OPEN_AI_KEY value with your authentic Open AI key
 
-* OPEN_AI_KEY = "create an openAI account and obtain an api key, then paste the key here"
+* OPEN_AI_KEY = "create an openAI account and obtain an api key, then paste the key here as a string"
