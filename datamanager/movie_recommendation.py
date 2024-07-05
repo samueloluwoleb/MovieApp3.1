@@ -1,17 +1,19 @@
+from dotenv import load_dotenv
 from openai import OpenAI
 import os
 import replicate
 import re
 
-
 # create environment for open ai
-OPEN_AI_KEY = "create an openAI account and obtain an api key, then paste the key here"
+load_dotenv()
+OPEN_AI_KEY = os.getenv("OPEN_AI_KEY")
+
 client = OpenAI(
     api_key=OPEN_AI_KEY
 )
 
 # create the environment for Replicate
-REPLICATE_TOKEN_KEY = "create a replicate account and obtain an api key, then paste the key here"
+REPLICATE_TOKEN_KEY = "REPLICATE KEYS GOES HERE"
 os.environ["REPLICATE_API_TOKEN"] = REPLICATE_TOKEN_KEY
 
 
@@ -22,6 +24,7 @@ def get_movie_recommendation_from_openai(prompt):
     :return:
     """
     chat_completion = client.chat.completions.create(
+
         messages=[
             {
                 "role": "user",
@@ -29,12 +32,12 @@ def get_movie_recommendation_from_openai(prompt):
             }
         ],
         model="gpt-3.5-turbo",
+
     )
     new_data = []
-    final_data = ""
     response = chat_completion.choices[0].message.content
-    response = response.split('\n')
-    response = response[2:]
+
+    response = response.split("\n")
 
     for data in response:
         if data == '':
@@ -58,4 +61,4 @@ def get_movie_recommendation_from_llama_replicate(prompt):
     return movies
 
 
-get_movie_recommendation_from_openai("Who are you")
+
