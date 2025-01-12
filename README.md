@@ -83,7 +83,7 @@ Add the details below in the config.py file
 * MAIL_USE_TLS = False
 * MAIL_USE_SSL = True
 * MAIL_USERNAME = "this should be admin email or any email you wish to reply to users email request"
-* MAIL_PASSWORD = 'this should be the password of your email or generated key string based on the configuration type of the email account used, especially if using gmail account' (Shoot a message to samueloluwoleonline@gmail.com if there are issues with eamil configurations)
+* MAIL_PASSWORD = 'this should be the password of your email or generated key string based on the configuration type of the email account used, especially if using gmail account' (Shoot a message to samueloluwoleonline@gmail.com if there are issues with email configurations)
 * MAIL_DEFAULT_SENDER = "this should be admin email or any email you wish to reply to users email request" 
 
 ## Open AI Key
