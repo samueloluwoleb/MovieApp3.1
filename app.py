@@ -6,6 +6,7 @@ from datamanager.sql_data_manager import *
 from config import config
 from flask_babel import Babel, refresh
 from datamanager.movie_recommendation import get_movie_recommendation_from_openai
+from datamanager.movie_recommendation import get_movie_recommendation_from_gemini
 from flask_mail import Mail, Message
 import secrets
 
