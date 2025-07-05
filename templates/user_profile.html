@@ -50,7 +50,7 @@
             recommendation_content.innerHTML = ''
             recommendation_content.style.backgroundColor = '#61a075';
 
-            chatgpt_api();
+            ai_api();
         });
 
         // Function to update dark mode on the server
@@ -72,9 +72,9 @@
             });
         }
 
-        function chatgpt_api() {
+        function ai_api() {
             // Using Fetch API to send a GET request to the server
-            const url = `http://127.0.0.1:5004/chatgpt_api/${user_id}`
+            const url = `http://127.0.0.1:5004/ai_api/${user_id}`
             fetch(url)
                 .then(response => {
                     if (!response.ok) {
