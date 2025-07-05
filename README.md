@@ -6,9 +6,9 @@
 * [Application Structure](#application-structure)
 * [Core Functionalities](#core-functionalities)
 * [Project dependencies installation](#project-dependencies-installation)
-* [Config.py file setup](#Config.py-file-setup)
-* [Open AI Key](#Open_API_Key)
-* [Google Gemini AI Key](#Google_Gemini_API_Key)
+* [Config.py file setup](#config.py-file-setup)
+* [OpenAI API Key](#openai-api-key)
+* [Google Gemini AI Key](#google-gemini-api-key)
 
 ## General info
 MoviWeb App project is a full-featured, dynamic web application that allows users to create their personal account, query for any movie title, the movie info is obtained through API call to OMDB website and the movie gets added to their personal list of favourite movies. User can add movies to their movie catalogue, update movie info, and delete a movie as well.
@@ -87,7 +87,7 @@ Add the details below in the config.py file
 * MAIL_PASSWORD = 'this should be the password of your email or generated key string based on the configuration type of the email account used, especially if using gmail account' (Shoot a message to samueloluwoleonline@gmail.com if there are issues with email configurations)
 * MAIL_DEFAULT_SENDER = "this should be admin email or any email you wish to reply to users email request" 
 
-## Open AI Key
+## OpenAI API Key
 
 * Open the datamanager folder and load the movie_recommendation.py file 
 * Edit the OPENAI_API_KEY value with your authentic OpenAI API key
