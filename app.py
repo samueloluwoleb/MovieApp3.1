@@ -689,8 +689,8 @@ def reset_password(token):
     return render_template('new_password.html', email=email, token=token)
 
 
-@app.route('/chatgpt_api/<int:user_id>')
-def chatgpt_api(user_id):
+@app.route('/ai_api/<int:user_id>')
+def ai_api(user_id):
     # Queries chatgpt and get the response for movies recommendation
     all_movies_titles = data_manager.get_user_movies_titles(user_id)
 
