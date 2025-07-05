@@ -697,6 +697,9 @@ def ai_api(user_id):
     movies_prompt_for_ai = f"Based on the story plot of these movies: {all_movies_titles}, " \
                            f"recommend 5 movies for me"
 
+    # for openai api 
+    # response = get_movie_recommendation_from_openai(movies_prompt_for_ai)
+
     response = get_movie_recommendation_from_openai(movies_prompt_for_ai)
     return response
 
