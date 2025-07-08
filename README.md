@@ -100,3 +100,6 @@ Add the details below in the config.py file
 * GEMINI_API_KEY = "create an openAI account and obtain an api key, then paste the key here as a string"
 
 ## Tidbits
+1. Comment out or delete entirely the app.run part of your code in app.py file in production. This part of the code should be added to the WSGI.py file 
+2. In the url locator, remove local host address in production. Production environment WSGI automatically defaults to website domain
+3. API keys also should be configured in production WSGI.py file. No need of env file in prod. The API keys can be assessed using the os.environ.get() method anywhere else in the code.
