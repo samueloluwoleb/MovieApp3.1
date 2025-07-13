@@ -84,7 +84,7 @@ Add the details below in the config.py file
 * MAIL_USE_TLS = False
 * MAIL_USE_SSL = True
 * MAIL_USERNAME = "this should be admin email or any email you wish to reply to users email request"
-* MAIL_PASSWORD = 'this should be the password of your email or generated key string based on the configuration type of the email account used, especially if using gmail account' (Shoot a message to samueloluwoleonline@gmail.com if there are issues with email configurations)
+* MAIL_PASSWORD = 'this will be a generated key string from your google account (Shoot a message to samueloluwoleonline@gmail.com if there are issues with email configurations)
 * MAIL_DEFAULT_SENDER = "this should be admin email or any email you wish to reply to users email request" 
 
 ## OpenAI API Key
@@ -100,6 +100,7 @@ Add the details below in the config.py file
 * GEMINI_API_KEY = "create an openAI account and obtain an api key, then paste the key here as a string"
 
 ## Tidbits
-1. Comment out or delete entirely the app.run part of your code in app.py file in production. This part of the code should be added to the WSGI.py file 
-2. In the url locator, remove local host address in production. Production environment WSGI automatically defaults to website domain
+1. Comment out or delete entirely the app.run part of your code in app.py file in production. This part of the code is in the WSGI.py file 
+2. In any url link, remove local host address (127.0.0.1) in production. Production environment WSGI automatically defaults to website domain
 3. API keys also should be configured in production WSGI.py file. No need of env file in prod. The API keys can be assessed using the os.environ.get() method anywhere else in the code.
+4. For MAIL_PASSWORD. Ensure 2FA is enabled on your adminn email and from the search bar, search for "app password" click and generate a password
